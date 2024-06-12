@@ -1,0 +1,78 @@
+.second-menu span {
+    margin: 10px;
+}
+
+.second-menu span:hover {
+    cursor: pointer;
+}
+
+.second-menu-selected {
+    background-color: #C7C7C7;
+    border-radius: 10px;
+}
+
+.profile {
+    margin: 20px;
+    font-size: 18px;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    padding-left: 20px;
+    height: 600px;
+   
+}
+
+.profile h2 {
+    font-size: 35px;
+}
+
+.scheduler-wrapper {
+    margin: 20px;
+    font-size: 18px;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.form-wrapper select {
+    margin-right: 50px;
+}
+
+.form-wrapper input {
+    margin-right: 50px;
+}
+
+.form-wrapper button {
+    background-color: #14BD7F;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.form-wrapper button:hover {
+    cursor: pointer;
+}
+
+.appointments-wrapper {
+    margin: 20px;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.appointment {
+    background-color: #E6E6E6;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.appointment button {
+    color: #fff;
+    background-color: #FF224A;
+    border: none;
+    border-radius: 6px;
+}
+
+.appointment button:hover {
+    cursor: pointer;
+}
