@@ -1,15 +1,17 @@
-import useToken from "../hooks/useToken";
+import { useAuth } from "../context/authContext";
 
+export default function Dashboard() {
+  const { user, logout } = useAuth();
 
-function Dashboard(){
-    const {token, setToken} = useToken();
+  const handleLogout = () => {
+    logout();
+  };
 
-    return (
-        <>
-        <h2>{token.username}</h2>
-        <p>{token.role}</p>
-        </>
-    );
+  return (
+    <>
+      <h2>{user.username}</h2>
+      <p>{user.role}</p>
+      <button onClick={handleLogout}>Logout</button>
+    </>
+  );
 }
-
-export default Dashboard;
