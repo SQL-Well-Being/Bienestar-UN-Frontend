@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getProximasCitasRequest } from "../api/salud";
+import { getProximasCitasEstudianteRequest} from "../api/salud";
 
 const CitasSaludContext = createContext();
 
@@ -16,7 +16,7 @@ export const useCitasSalud = () => {
 export const CitasSaludProvider = ({ DNI, children }) => {
     const [proximasCitas, setProximasCitas] = useState();
     const getProximasCitas = async () => {
-        const res = await getProximasCitasRequest(DNI);
+        const res = await getProximasCitasEstudianteRequest(DNI);
         setProximasCitas(res.data);
     };
     

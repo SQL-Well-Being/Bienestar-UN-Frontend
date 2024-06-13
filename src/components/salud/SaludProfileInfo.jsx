@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../../context/authContext";
 import { getPerfilDeSaludRequest } from "../../api/salud.js";
 import { AxiosError } from "axios";
 
@@ -42,7 +41,7 @@ function SaludProfileInfo({ profileTitle, DNI }) {
           <p><b>RH:</b>{perfil.perfsalud_RH}</p>
           <p><b>Discapacidades: </b></p>
           { <ul>
-              {perfil.perfsalud_discapacidades.split("-").map((element, idx) => {
+              {perfil.perfsalud_discapacidades.map((element, idx) => {
                   return <li key={idx}>{element}</li>
               })}
           </ul> }
