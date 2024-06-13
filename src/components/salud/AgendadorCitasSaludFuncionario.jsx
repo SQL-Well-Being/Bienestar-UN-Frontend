@@ -1,33 +1,34 @@
 import { useState } from "react";
 import { agenderCitaRequest } from "../../api/salud";
-import { useParams } from "react-router-dom";
-import { useCitasSalud } from "../../context/citasSaludContext";
+import { AxiosError } from "axios";
 
-function AgendadorCitas(){
-    const { getProximasCitas } = useCitasSalud();
+function AgendadorCitasSaludFuncionario(){
+    const [estDni, setEstDni] = useState();
     const [tipoCita, setTipoCita] = useState();
     const [fecha, setFecha] = useState();
-    const params = useParams();
 
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            fecha.setHours(fecha.getHours()-5);
             const formatedDate = fecha.toISOString().split('T')[0] + " " + fecha.toISOString().split('T')[1].slice(0,-5);
-            await agenderCitaRequest({DNI: params.DNI, tipo_cita: tipoCita, fecha: formatedDate});
-            getProximasCitas(); // trigger re-render
+            const res = await agenderCitaRequest({DNI: estDni, tipo_cita: tipoCita, fecha: formatedDate});
+            alert(res.data.message);
         } catch (error) {
-            alert(e.message);
+            if(error instanceof AxiosError) {
+                alert(error.response.data.message);
+            } else {
+                alert(error);
+            }
         }
-
     };
 
-    return (
+    return(
         <>
-        <div className="scheduler-wrapper">
+        <div>
             <h2>Agendar Cita</h2>
-            <div className="form-wrapper">
+            <div >
                 <form onSubmit={handleSubmit}>
+                    <input type="text" onChange={(e) => setEstDni(e.target.value)}></input>
                     <select onChange={(e) => setTipoCita(e.target.value)}>
                         <option disabled selected value> -- selecciona una opción -- </option>
                         <option value= "Consulta Psicologica">Consulta Psicologica</option>
@@ -35,7 +36,11 @@ function AgendadorCitas(){
                         <option value= "Examen médico">Examen médico</option>
                     </select>
 
-                    <input type="datetime-local" onChange={(e) => setFecha(new Date(e.target.value))}/>
+                    <input type="datetime-local" onChange={(e) => {
+                        const newDate = new Date(e.target.value);
+                        newDate.setHours(newDate.getHours() -5);
+                        setFecha(newDate);
+                    }}/>
                     <button type="submit">Agendar Cita</button>
                 </form>
             </div>
@@ -44,4 +49,4 @@ function AgendadorCitas(){
     );
 }
 
-export default AgendadorCitas;
+export default AgendadorCitasSaludFuncionario;

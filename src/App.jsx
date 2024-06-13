@@ -5,7 +5,7 @@ import { AuthProvider } from "./context/authContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import HealthDashboard from "./pages/SaludDashboard";
+import SaludDashboard from "./pages/SaludDashboard";
 
 import './App.css'
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/salud/:DNI" element={<HealthDashboard/>} />
+            <Route path="/salud" element={<SaludDashboard/>} />
           </Route>
         </Routes>
       </BrowserRouter>
