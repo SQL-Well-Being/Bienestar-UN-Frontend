@@ -34,15 +34,19 @@ function SaludProfileInfo({ profileTitle, DNI }) {
     }
     return (
         <>
-        <div className="profile">
-          <h2>{ profileTitle }</h2>
-          <p><b>Estatura:</b>{perfil.perfsalud_estatura}</p>
-          <p><b>Peso:</b>{perfil.perfsalud_peso}</p>
-          <p><b>RH:</b>{perfil.perfsalud_RH}</p>
-          <p><b>Discapacidades: </b></p>
-          { <ul>
+        <div className="w-[820px]">
+          <h2 className=" text-3xl font-bold mb-6">{ profileTitle }</h2>
+
+          <div>
+            <p className="my-[10px]"><b>Estatura:</b>{perfil.perfsalud_estatura}</p>
+            <p className="my-[10px]"><b>Peso:</b>{perfil.perfsalud_peso}</p>
+            <p className="my-[10px]"><b>RH:</b>{perfil.perfsalud_RH}</p>
+            <p className="my-[10px]"><b>Discapacidades: </b></p>
+          </div>
+
+          { <ul className="list-disc">
               {perfil.perfsalud_discapacidades.map((element, idx) => {
-                  return <li key={idx}>{element}</li>
+                  return <li key={idx} className="mx-[50px]">{element}</li>
               })}
           </ul> }
         </div>

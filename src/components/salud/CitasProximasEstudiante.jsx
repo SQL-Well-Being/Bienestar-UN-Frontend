@@ -17,7 +17,7 @@ function CitasProximasEstudiante(){
 
     return (
         <>
-            <ListaCitasSalud citas={proximasCitas} handleClick={handleClick}/>
+            <ListaCitasSalud title={"Mis próximas citas"} citas={proximasCitas} handleClick={handleClick}/>
         </>
     );
 }

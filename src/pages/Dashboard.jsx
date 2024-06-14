@@ -1,3 +1,4 @@
+import Nav from "../components/Nav";
 import { useAuth } from "../context/authContext";
 
 export default function Dashboard() {
@@ -9,7 +10,8 @@ export default function Dashboard() {
 
   return (
     <>
-      <h2>{user.username}</h2>
+      <Nav/>
+      <h2 className="text-yellow-600 text-2xl">{user.username}</h2>
       <p>{user.role}</p>
       <button onClick={handleLogout}>Logout</button>
     </>

@@ -25,7 +25,7 @@ function CitasProximasFuncionario(){
 
     return(
         <>
-            <ListaCitasSalud citas={citas} handleClick={handleClick}/>
+            <ListaCitasSalud title={"Próximas citas"}citas={citas} handleClick={handleClick}/>
         </>
     );
 }

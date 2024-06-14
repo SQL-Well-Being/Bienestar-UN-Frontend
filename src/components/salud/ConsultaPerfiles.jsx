@@ -11,12 +11,20 @@ function ConsultaPerfiles(){
     const renderProfile = () => {
 
         if(editMode){
-            return <EditSaludProfileInfo profileTitle={profTitle} DNI={estDni} setEditMode={setEditMode}/>;
-        } else {
             return (
                 <div>
-                    <SaludProfileInfo profileTitle={profTitle} DNI={estDni}/>
-                    <button onClick={() => setEditMode(true)}>Editar</button>
+                    <EditSaludProfileInfo profileTitle={profTitle} DNI={estDni} setEditMode={setEditMode}/>
+                </div>
+            );
+        } else {
+            return (
+                <div className="rounded-wrapper ml-10  h-[600px]">
+                    <div className="float-left">
+                        <SaludProfileInfo profileTitle={profTitle} DNI={estDni}/>
+                    </div>
+      
+                    <button className="green-button float-right " onClick={() => setEditMode(true)}>Editar</button>
+                    
                 </div>
             );
         }
@@ -31,12 +39,18 @@ function ConsultaPerfiles(){
 
     return(
         <>
-        <div>
-            <h2>Consultar  Perfil</h2>
+        <div className="rounded-wrapper">
+            <h2 className="text-2xl font-bold m-4">Consultar  Perfil</h2>
             <form onSubmit={handleSubmit}>
-                <label>DNI:</label>
-                <input type="text" onChange={(e) => setEstDni(e.target.value)}/>
-                <button type="submit" disabled={editMode}>Consultar</button>
+                <div className="flex items-center">
+                    <div>
+                        <label className="form-label">DNI:</label>
+                        <input className="form-input" type="text" onChange={(e) => setEstDni(e.target.value)}/>
+                    </div>
+
+                    <button className="green-button" type="submit" disabled={editMode}>Consultar</button>
+                </div>
+
             </form>
         </div>
 
