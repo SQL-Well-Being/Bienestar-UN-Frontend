@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import SaludDashboard from "./pages/SaludDashboard";
 
 import './App.css'
+import GestionSocioeconomicaDashboard from "./pages/GestionSocioeconomicaDashboard";
+import ConvocatoriaGestion from "./pages/ConvocatoriaGestion";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/salud" element={<SaludDashboard/>} />
+            <Route path="/gestion-socioeconomica" element={<GestionSocioeconomicaDashboard/>} />
+            <Route path="/gestion-socioeconomica/convocatorias/:conId" element={<ConvocatoriaGestion/>} />
           </Route>
         </Routes>
       </BrowserRouter>
