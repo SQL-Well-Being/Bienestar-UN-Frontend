@@ -1,4 +1,5 @@
 import InfoTallerCultural from "./InfoTallerCultural";
+import AsistenciaTallerCultural from "./AsistenciaTallerCultural"
 
 function InfoTallerCulturalFuncionario() {
   const handleClick = async () => {
@@ -7,7 +8,7 @@ function InfoTallerCulturalFuncionario() {
 
   return (
     <>
-      <div className="rounded-wrapper h-[600px]">
+      <div className="rounded-wrapper h-[450px]">
         <InfoTallerCultural />
         <button
           className="green-button mx-0 my-9"
@@ -16,6 +17,7 @@ function InfoTallerCulturalFuncionario() {
           Editar
         </button>
       </div>
+       <AsistenciaTallerCultural /> 
     </>
   );
 }

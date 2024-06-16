@@ -9,7 +9,7 @@ function CulturaEstudianteDashboard(){
     const [searchParams, setSearchParams] = useSearchParams();
     const [ page, setPage ] = useState("grupos artísticos institucionales");
     const pages = ["grupos artísticos institucionales", "convocatorias gai", "talleres culturales"];
-    const pageLabels = ["Grupos artísticos institucionales", "Convocatorias gai", "Talleres culturales"];
+    const pageLabels = ["Grupos artísticos institucionales", "Convocatorias GAI", "Talleres culturales"];
 
     useEffect(() => {
         if(searchParams.get("page") && pages.indexOf(searchParams.get("page")) !== -1){
