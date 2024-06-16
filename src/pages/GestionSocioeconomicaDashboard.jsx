@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import GestionEstudianteDashboard from "../components/gestion_socioeconomica/GestionEstudianteDashboard";
+import GestionFuncionarioDashboard from "../components/gestion_socioeconomica/GestionFuncionarioDashboard";
 import { useAuth } from "../context/authContext";
 
 function GestionSocioeconomicaDashboard(){
@@ -13,7 +14,7 @@ function GestionSocioeconomicaDashboard(){
 
         } else if (user.role === "funcionario_bienestar"){
 
-            return <p>Holi</p>;
+            return <GestionFuncionarioDashboard/>;
         }
     };
 

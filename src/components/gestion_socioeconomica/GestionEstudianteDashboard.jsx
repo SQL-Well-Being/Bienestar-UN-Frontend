@@ -3,6 +3,7 @@ import SecondLevelMenu from "../SecondLevelMenu";
 import InfoConvocatoriasAbiertas from "./InfoConvocatoriasAbiertas";
 import InfoParticipacionesEstudiante from "./InfoParticipacionesEstudiante";
 import { useSearchParams } from "react-router-dom";
+import BeneficiosEstudiante from "./BeneficiosEstudiante";
 
 function GestionEstudianteDashboard(){
     const [searchParams, setSearchParams] = useSearchParams();
@@ -22,6 +23,8 @@ function GestionEstudianteDashboard(){
             return <InfoConvocatoriasAbiertas/>;
         } else if(page === pages[1]){
             return <InfoParticipacionesEstudiante/>;
+        } else if(page === pages[2]){
+            return <BeneficiosEstudiante/>
         }
     };
 

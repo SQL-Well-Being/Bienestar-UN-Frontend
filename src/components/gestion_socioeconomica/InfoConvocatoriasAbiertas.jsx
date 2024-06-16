@@ -24,10 +24,10 @@ function InfoConvocatoriasAbiertas(){
     return (
         <div className="rounded-wrapper">
             <h2 className="text-3xl font-bold">Convocatorias Abiertas</h2>
-            <div className="flex flex-row flex-wrap content-start gap-x-[60px] gap-y-9 my-5 w-[1200px]">
+            <div className="flex flex-row flex-wrap content-start gap-x-[30px] gap-y-9 my-5 w-[1200px]">
                 {convocatorias.map((c) => {
                     return (
-                        <div className="bg-[#E6E6E6] h-[95px] w-[570px] rounded-[20px] p-2">
+                        <div className="bg-[#E6E6E6] h-[95px] w-[570px] rounded-[20px] p-2 ml-2">
                             <span className=" text-xl font-bold hover:cursor-pointer hover:underline">
                                 <Link to={`/gestion-socioeconomica/convocatorias/${c.con_esp_id}`}>{c.con_esp_nombre}</Link>
                             </span>

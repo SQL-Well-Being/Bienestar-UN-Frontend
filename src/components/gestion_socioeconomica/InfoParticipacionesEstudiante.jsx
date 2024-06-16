@@ -27,11 +27,11 @@ function InfoParticipacionesEstudiante() {
         <>
         <div className="rounded-wrapper">
             <h2 className="text-3xl font-bold">Mis participaciones</h2>
-            <div className="my-5">
+            <div className="p-3">
                 {participaciones.length === 0 ? <p> No has participado en ninguna convocatoria de gestión socioeconomica</p> : participaciones.map(
                     (p) => {
                         return (
-                            <div className="bg-[#E6E6E6] rounded-[20px] p-2 w-[635px] mt-5 ml-5">
+                            <div className="bg-[#E6E6E6] rounded-[20px] p-2 w-[635px] mt-5 ml-2">
                                 <span className="text-xl font-bold hover:cursor-pointer hover:underline">
                                     <Link to={`/gestion-socioeconomica/convocatorias/${p.con_esp_id}`}>{p.con_esp_nombre}</Link>
                                 </span>

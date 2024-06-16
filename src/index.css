@@ -4,7 +4,7 @@
 
 @layer components {
     .green-button {
-        @apply bg-[#14BD7F] text-white p-1 text-sm rounded-md w-[130px] h-[40px] mx-5 mt-[10px];
+        @apply bg-[#14BD7F] text-white p-1 text-sm rounded-md w-[130px] h-[40px] mx-5 mt-[10px] disabled:opacity-60;
     }
 
     .red-button {
