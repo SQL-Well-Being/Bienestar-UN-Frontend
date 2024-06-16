@@ -1,13 +1,10 @@
 import Nav from "../components/Nav";
 import DashboardEstudiante from "../components/home/DashboardEstudiante";
+import DashboardFuncionario from "../components/home/DashboardFuncionario";
 import { useAuth } from "../context/authContext";
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-  };
+  const { user } = useAuth();
 
   const loadPage = () => {
     if(user.role === "estudiante"){
@@ -16,6 +13,8 @@ export default function Dashboard() {
           <DashboardEstudiante/>
         </div>
       );
+    } else if(user.role === "funcionario_bienestar"){
+      return <DashboardFuncionario/>
     }
   };
 
@@ -23,7 +22,6 @@ export default function Dashboard() {
     <>
       <Nav/>
       {loadPage()}
-      <button onClick={handleLogout}>Logout</button>
     </>
   );
 }
