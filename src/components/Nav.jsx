@@ -10,7 +10,7 @@ function Nav() {
                     <span className="block mx-5"><Link to={"/gestion-socioeconomica"}>Fomento Socioeconomico</Link></span>
                     <span className="block mx-5"><Link to={"/salud"}>Acompañámiento Integral</Link></span>
                     <span className="block mx-5"><Link to={"/salud"}>Salud</Link></span>
-                    <span className="block mx-5"><Link to={"/salud"}>Cultura</Link></span>
+                    <span className="block mx-5"><Link to={"/cultura"}>Cultura</Link></span>
                     <span className="block mx-5"><Link to={"/salud"}>Actividad fisica y Deporte</Link></span>
                 </div>
         </div>
