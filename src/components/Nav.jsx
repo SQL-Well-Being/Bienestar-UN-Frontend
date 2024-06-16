@@ -27,8 +27,8 @@ function Nav() {
                             <Link to={"/gestion-socioeconomica"}>Fomento Socioeconomico</Link>
                         </span>
                         
-                        <span className={`block mx-5 ${page === "acompaniamiento-integral"? " underline " : ""}`}>
-                            <Link to={"/salud"}>Acompañámiento Integral</Link>
+                        <span className={`block mx-5 ${page === "acompaniamiento"? " underline " : ""}`}>
+                            <Link to={"/acompaniamiento"}>Acompañamiento Integral</Link>
                         </span>
 
                         <span className={`block mx-5 ${page === "salud"? " underline " : ""}`}>

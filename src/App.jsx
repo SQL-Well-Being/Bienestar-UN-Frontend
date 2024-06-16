@@ -12,6 +12,8 @@ import ConvocatoriaGestion from "./pages/ConvocatoriaGestion";
 import TallerCultural from "./pages/TallerCultural";
 
 import './App.css'
+import AcompaniamientoDashboard from "./pages/AcompaniamientoDashboard";
+import PerfilEstudiante from "./pages/PerfilEstudiante";
 
 
 function App() {
@@ -30,6 +32,11 @@ function App() {
 
             <Route path="/gestion-socioeconomica" element={<GestionSocioeconomicaDashboard/>} />
             <Route path="/gestion-socioeconomica/convocatorias/:conId" element={<ConvocatoriaGestion/>} />
+
+            <Route path="/acompaniamiento" element={<AcompaniamientoDashboard/>}/>
+
+            <Route path="/estudiantes/:DNI" element={<PerfilEstudiante/>}/>
+            
           </Route>
         </Routes>
       </BrowserRouter>
