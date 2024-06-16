@@ -32,7 +32,7 @@ function EditParticipacionForm({p, participacionSetter}){
                     <div className="flex flex-row gap-x-[150px] ">
                         <div>
                             <label className="form-label">Estado de participacion</label>
-                            <select className="form-input" disabled={p.con_esp_estado === "ADJUDICADO" || p.con_gen_activa === 0} onChange={(e) => setEstado(e.target.value)}>
+                            <select className="form-input" disabled={p.con_gen_activa === 0} onChange={(e) => setEstado(e.target.value)}>
                                 <option value="PREADJUDICADO" selected={p.con_esp_estado === "PREADJUDICADO"}>PREADJUDICADO</option>
                                 <option value="ELEGIBLE" selected={p.con_esp_estado === "ELEGIBLE"}>ELEGIBLE</option>
                                 <option value="ADJUDICADO" selected={p.con_esp_estado === "ADJUDICADO"}>ADJUDICADO</option>
@@ -41,7 +41,7 @@ function EditParticipacionForm({p, participacionSetter}){
                             </select>
                         </div>
 
-                        <button type="submit" className="green-button" disabled={p.con_esp_estado === "ADJUDICADO" || p.con_gen_activa === 0}>
+                        <button type="submit" className="green-button" disabled={p.con_gen_activa === 0}>
                             Actualizar Estado
                             </button>
                     </div>

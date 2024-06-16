@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
-import { getConvocatoriasAbiertasRequest } from "../../api/gestion";
+import { getConvocatoriasActivasRequest, getConvocatoriasInactivasRequest} from "../../api/gestion";
 import { Link } from "react-router-dom";
 
-function InfoConvocatoriasAbiertas(){
+function InfoConvocatoriasGestion({activas}){
     const [convocatorias, setConvocatorias] = useState(null);
 
     useEffect(() => {
         const getConvocatorias = async () =>{
             const d = new Date(Date.now());
             const periodo = `${d.getFullYear()}-${d.getMonth() + 1 < 6 ? 1 : 2}`;
-            const res = await getConvocatoriasAbiertasRequest(periodo);
+            const res = activas ? await getConvocatoriasActivasRequest(periodo) : await getConvocatoriasInactivasRequest();
             setConvocatorias(res.data);
         };
 
         getConvocatorias();
 
-    }, []);
+    }, [activas]);
 
     if(!convocatorias){
         return <p>Loading...</p>;
@@ -23,7 +23,7 @@ function InfoConvocatoriasAbiertas(){
 
     return (
         <div className="rounded-wrapper">
-            <h2 className="text-3xl font-bold">Convocatorias Abiertas</h2>
+            <h2 className="text-3xl font-bold">Convocatorias {activas ? "Activas" : "Inactivas"}</h2>
             <div className="flex flex-row flex-wrap content-start gap-x-[30px] gap-y-9 my-5 w-[1200px]">
                 {convocatorias.map((c) => {
                     return (
@@ -41,4 +41,4 @@ function InfoConvocatoriasAbiertas(){
     );
 }
 
-export default InfoConvocatoriasAbiertas;
+export default InfoConvocatoriasGestion;

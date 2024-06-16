@@ -1,4 +1,5 @@
 import Nav from "../components/Nav";
+import DashboardEstudiante from "../components/home/DashboardEstudiante";
 import { useAuth } from "../context/authContext";
 
 export default function Dashboard() {
@@ -8,11 +9,20 @@ export default function Dashboard() {
     logout();
   };
 
+  const loadPage = () => {
+    if(user.role === "estudiante"){
+      return (
+        <div>
+          <DashboardEstudiante/>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Nav/>
-      <h2 className="text-yellow-600 text-2xl">{user.username}</h2>
-      <p>{user.role}</p>
+      {loadPage()}
       <button onClick={handleLogout}>Logout</button>
     </>
   );

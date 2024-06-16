@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import SecondLevelMenu from "../SecondLevelMenu";
-import InfoConvocatoriasAbiertas from "./InfoConvocatoriasAbiertas";
 import InfoParticipacionesEstudiante from "./InfoParticipacionesEstudiante";
 import { useSearchParams } from "react-router-dom";
 import BeneficiosEstudiante from "./BeneficiosEstudiante";
+import InfoConvocatoriasGestion from "./InfoConvocatoriasGestion";
 
 function GestionEstudianteDashboard(){
     const [searchParams, setSearchParams] = useSearchParams();
@@ -20,7 +20,7 @@ function GestionEstudianteDashboard(){
 
     const loadPage = () => {
         if(page === pages[0]){
-            return <InfoConvocatoriasAbiertas/>;
+            return <InfoConvocatoriasGestion activas={true}/>
         } else if(page === pages[1]){
             return <InfoParticipacionesEstudiante/>;
         } else if(page === pages[2]){
