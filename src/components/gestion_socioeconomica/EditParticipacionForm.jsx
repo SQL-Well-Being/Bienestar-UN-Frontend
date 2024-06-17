@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import { useState } from "react";
 import { putParticipacionRequest } from "../../api/gestion";
+import { Link } from "react-router-dom";
 
 function EditParticipacionForm({p, participacionSetter}){
     const [estado, setEstado] = useState(p.con_esp_estado);
@@ -24,7 +25,9 @@ function EditParticipacionForm({p, participacionSetter}){
         <>
             <div className="bg-[#E6E6E6] rounded-[20px] p-2  mt-5 ml-2 flex flex-row gap-x-10">
                 <div className="w-[360px]">
-                    <h3 className="text-xl font-bold">{p.est_nombre}</h3>
+                    <span className="text-xl font-bold hover:underline hover:cursor-pointer">
+                        <Link to={`/estudiantes/${p.est_per_DNI}`}>{p.est_nombre}</Link>
+                    </span>
                     <p><b>DNI: </b>{p.est_per_DNI}</p>
                 </div>
 
