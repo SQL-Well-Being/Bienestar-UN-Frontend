@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import InfoTallerCultural from "./InfoTallerCultural";
 import { postAsistenciaTallerCulturalRequest } from "../../api/cultura";
+import { AxiosError } from "axios";
 
 function InfoTallerCulturalEstudiante() {
   const { user } = useAuth();
@@ -10,10 +11,14 @@ function InfoTallerCulturalEstudiante() {
   const handleClick = async () => {
     try {
       await postAsistenciaTallerCulturalRequest(id, { DNI: user.username });
-      alert("Asistencia registrada correctamente.");
-    } catch (e) {
-      alert(e);
-    }
+      alert("Asistencia registrada correctamente."); 
+  } catch (error) {
+      if(error instanceof AxiosError) {
+          alert(error.response.data.message);
+      } else {
+          alert(error);
+      }
+  }
   };
 
   return (
