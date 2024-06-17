@@ -28,11 +28,10 @@ const InfoTorneos = () => {
               key={t.tall_nombre}
               className="bg-[#E6E6E6] h-[95px] w-[570px] rounded-[20px] p-2 ml-2"
             >
-              <span className=" text-xl font-bold hover:cursor-pointer hover:underline">
-                <Link to={`/cultura/talleres-culturales/${t.tall_eve_id}`}>
-                  {t.tor_nombre}
-                </Link>
-              </span>
+              <p className=" text-xl font-bold hover:cursor-pointer hover:underline">
+                <b></b>
+                {t.tor_nombre}
+              </p>
               <p className="text-lg">
                 <b>Deporte: </b>
                 {t.depo_nombre}
