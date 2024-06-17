@@ -10,6 +10,8 @@ import CulturaDashboard from "./pages/CulturaDashboard"
 import GestionSocioeconomicaDashboard from "./pages/GestionSocioeconomicaDashboard";
 import ConvocatoriaGestion from "./pages/ConvocatoriaGestion";
 import TallerCultural from "./pages/TallerCultural";
+import DeporteDashboard from "./pages/DeporteDashboard";
+
 
 import './App.css'
 
@@ -24,6 +26,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/salud" element={<SaludDashboard/>} />
+
+            <Route path="/deporte" element={<DeporteDashboard/>} />
 
             <Route path="/cultura" element={<CulturaDashboard/>} />
             <Route path="/cultura/talleres-culturales/:id" element={<TallerCultural/>} />

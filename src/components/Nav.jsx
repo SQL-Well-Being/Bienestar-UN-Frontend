@@ -40,7 +40,7 @@ function Nav() {
                         </span>
 
                         <span className={`block mx-5 ${page === "deporte"? " underline " : ""}`}>
-                            <Link to={"/salud"}>Actividad fisica y Deporte</Link>
+                            <Link to={"/deporte"}>Actividad fisica y Deporte</Link>
                         </span>
                     </div>
             </div>
